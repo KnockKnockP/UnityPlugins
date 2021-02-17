@@ -27,7 +27,9 @@ namespace UnityPlugins {
         }
 
         private void GenerateNewVersionNumber() {
-            Debug.Log($"New version : {DateTime.Now.ToString("TESTBUILD-yyyy-MM-ddThh-mm-tt+0900", CultureInfo.InvariantCulture)}\r\n");
+            string version = DateTime.Now.ToString("TESTBUILD-yyyy-MM-ddThh-mm-tt+0900", CultureInfo.InvariantCulture);
+            GUIUtility.systemCopyBuffer = version;
+            Debug.Log($"New version : {version}\r\n");
             Debug.LogError("Do not forget to enter the password.");
             return;
         }
