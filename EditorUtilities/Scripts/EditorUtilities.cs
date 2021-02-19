@@ -21,18 +21,24 @@ namespace UnityPlugins {
         public static GameObject Instantiate(Object assetComponentOrGameObject) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject));
+#else
+            return null;
 #endif
         }
 
         public static GameObject Instantiate(Object assetComponentOrGameObject, Scene destinationScene) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject, destinationScene));
+#else
+            return null;
 #endif
         }
 
         public static GameObject Instantiate(Object assetComponentOrGameObject, Transform parent) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject, parent));
+#else
+            return null;
 #endif
         }
     }
