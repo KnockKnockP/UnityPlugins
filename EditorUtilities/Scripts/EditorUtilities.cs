@@ -18,6 +18,13 @@ namespace UnityPlugins {
             return;
         }
 
+        public static void MarkObjectAsDirty(Object target) {
+#if UNITY_EDITOR
+            EditorUtility.SetDirty(target);
+#endif
+            return;
+        }
+
         public static GameObject Instantiate(Object assetComponentOrGameObject) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject));

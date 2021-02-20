@@ -43,4 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4686dc93812de1f40b921fe669f0242e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainBuildDisableObjects: []
+  MainBuildDisableObjects:
+  - {fileID: 2727184339052972010}
+  - {fileID: 0}
