@@ -28,6 +28,10 @@ namespace UnityPlugins {
             public static Vector2 MouseToWorld(Vector2 mousePosition, Camera camera) {
                 return camera.ScreenToWorldPoint(mousePosition);
             }
+
+            public static RaycastHit2D[] MouseToHits(Camera camera) {
+                return Physics2D.RaycastAll(MouseToWorld(UnityEngine.Input.mousePosition, camera), Vector2.zero);
+            }
         }
     }
 }
