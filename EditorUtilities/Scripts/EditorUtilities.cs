@@ -25,6 +25,14 @@ namespace UnityPlugins {
             return;
         }
 
+        public static GameObject PlayAndEditInstantiate(GameObject original) {
+            if (Application.isPlaying == true) {
+                return Object.Instantiate(original);
+            } else {
+                return Instantiate(original);
+            }
+        }
+
         public static GameObject Instantiate(Object assetComponentOrGameObject) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject));
