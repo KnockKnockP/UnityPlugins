@@ -33,5 +33,14 @@ namespace UnityPlugins {
                 return Physics2D.RaycastAll(MouseToWorld(UnityEngine.Input.mousePosition, camera), Vector2.zero);
             }
         }
+
+        public struct Animation {
+            public static void ChangeAnimation(Animator animator, string animationName, int index) {
+                if (animator.GetCurrentAnimatorStateInfo(index).IsName(animationName) == false) {
+                    animator.Play(animationName);
+                }
+                return;
+            }
+        }
     }
 }
