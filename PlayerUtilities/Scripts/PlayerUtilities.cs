@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace UnityPlugins {
@@ -6,6 +7,15 @@ namespace UnityPlugins {
             //Returns true if the distance between is longer than the maxDistance.
             public static bool IsDiagnal(Vector2 position1, Vector2 position2) {
                 return ((position1.x != position2.x) && (position1.y != position2.y));
+            }
+
+            public static T Clamp<T>(T value, T min, T max) where T : IComparable {
+                if (value.IsSmallerThan(min) == true) {
+                    value = min;
+                } else if (value.IsGreaterThan(max) == true) {
+                    value = max;
+                }
+                return value;
             }
 
             //Returns direction relative to position1.
