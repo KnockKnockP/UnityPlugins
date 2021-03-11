@@ -1,9 +1,9 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
 #endif
-using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace UnityPlugins {
     public struct EditorUtilities {
