@@ -11,8 +11,6 @@ namespace UnityPlugins {
 #if UNITY_EDITOR
             if (Application.isPlaying == false) {
                 EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
-            } else {
-                Debug.LogWarning($"{nameof(MarkSceneAsDirty)} can not be called in play mode.");
             }
 #endif
             return;
