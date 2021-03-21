@@ -36,11 +36,11 @@ namespace UnityPlugins {
 
         public struct Input {
             public static int ParseInt(string input, int defaultReturn) {
-                return ((input != null && input != "") ? int.Parse(input) : defaultReturn);
+                return (((input != null) && (input != "")) ? int.Parse(input) : defaultReturn);
             }
 
             public static long ParseLong(string input, long defaultReturn) {
-                return ((input != null && input != "") ? long.Parse(input) : defaultReturn);
+                return (((input != null) && (input != "")) ? long.Parse(input) : defaultReturn);
             }
 
             public static Vector2 MouseToWorld(Vector2 mousePosition, Camera camera) {
