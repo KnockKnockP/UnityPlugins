@@ -18,6 +18,18 @@ namespace UnityPlugins {
                 return value;
             }
 
+            public static T RandomEnum<T>() {
+                System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+                Array values = Enum.GetValues(typeof(T));
+                return (T)(values.GetValue(random.Next(values.Length)));
+            }
+
+            public static T RandomEnum<T>(int start, int end) {
+                System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+                Array values = Enum.GetValues(typeof(T));
+                return (T)(values.GetValue(random.Next(start, end)));
+            }
+
             //Returns direction relative to position1.
             public static Vector2 CalculateDirection(Vector2 position1, Vector2 position2) {
                 if (position1.x > position2.x) {
