@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -16,7 +17,7 @@ namespace UnityPlugins {
             return;
         }
 
-        public static void MarkObjectAsDirty(Object target) {
+        public static void MarkObjectAsDirty(UnityEngine.Object target) {
 #if UNITY_EDITOR
             EditorUtility.SetDirty(target);
 #endif
@@ -25,13 +26,13 @@ namespace UnityPlugins {
 
         public static GameObject PlayAndEditInstantiate(GameObject original) {
             if (Application.isPlaying == true) {
-                return Object.Instantiate(original);
+                return UnityEngine.Object.Instantiate(original);
             } else {
                 return Instantiate(original);
             }
         }
 
-        public static GameObject Instantiate(Object assetComponentOrGameObject) {
+        public static GameObject Instantiate(UnityEngine.Object assetComponentOrGameObject) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject));
 #else
@@ -39,7 +40,7 @@ namespace UnityPlugins {
 #endif
         }
 
-        public static GameObject Instantiate(Object assetComponentOrGameObject, Scene destinationScene) {
+        public static GameObject Instantiate(UnityEngine.Object assetComponentOrGameObject, Scene destinationScene) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject, destinationScene));
 #else
@@ -47,12 +48,23 @@ namespace UnityPlugins {
 #endif
         }
 
-        public static GameObject Instantiate(Object assetComponentOrGameObject, Transform parent) {
+        public static GameObject Instantiate(UnityEngine.Object assetComponentOrGameObject, Transform parent) {
 #if UNITY_EDITOR
             return (GameObject)(PrefabUtility.InstantiatePrefab(assetComponentOrGameObject, parent));
 #else
             return null;
 #endif
+        }
+
+        public static void PrintEnums<T>() {
+#if UNITY_EDITOR
+            GUILayout.Label("\r\n" +
+                              $"{typeof(T)}", EditorStyles.boldLabel);
+            foreach (string enumName in Enum.GetNames(typeof(T))) {
+                GUILayout.Label(enumName, EditorStyles.miniLabel);
+            }
+#endif
+            return;
         }
     }
 }
