@@ -30,7 +30,7 @@ namespace UnityPlugins {
 
         private void GenerateNewVersionNumber() {
             string version = DateTime.Now.ToString("TESTBUILD-yyyy-MM-ddThh-mm-tt+0900", CultureInfo.InvariantCulture);
-            GUIUtility.systemCopyBuffer = version;
+            GUIUtility.systemCopyBuffer = PlayerSettings.bundleVersion = version;
             Debug.Log($"New version : {version}\r\n");
             Debug.LogError("Do not forget to enter the password.");
             return;
