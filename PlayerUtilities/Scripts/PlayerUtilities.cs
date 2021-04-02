@@ -72,5 +72,18 @@ namespace UnityPlugins {
                 return;
             }
         }
+
+        public struct Other {
+            public static void PrintOutEnums<T>() {
+                PrintOutEnums(typeof(T));
+                return;
+            }
+
+            public static void PrintOutEnums(Type enumType) {
+                foreach (string enumName in Enum.GetNames(enumType)) {
+                    Debug.Log(enumName);
+                }
+            }
+        }
     }
 }
