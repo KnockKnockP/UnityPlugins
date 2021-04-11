@@ -18,14 +18,19 @@ namespace UnityPlugins {
                 return value;
             }
 
-            public static T RandomEnum<T>() {
-                System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+            private static System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+            public static T RandomEnum<T>(int? seed = null) where T : Enum {
+                if (seed != null) {
+                    random = new System.Random((int)(seed));
+                }
                 Array values = Enum.GetValues(typeof(T));
                 return (T)(values.GetValue(random.Next(values.Length)));
             }
 
-            public static T RandomEnum<T>(int start, int end) {
-                System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+            public static T RandomEnum<T>(int start, int end, int? seed = null) where T : Enum {
+                if (seed != null) {
+                    random = new System.Random((int)(seed));
+                }
                 Array values = Enum.GetValues(typeof(T));
                 return (T)(values.GetValue(random.Next(start, end)));
             }
