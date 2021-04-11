@@ -56,7 +56,7 @@ namespace UnityPlugins {
 #endif
         }
 
-        public static void PrintEnums<T>() {
+        public static void PrintEnums<T>() where T : Enum {
 #if UNITY_EDITOR
             GUILayout.Label("\r\n" +
                               $"{typeof(T)}", EditorStyles.boldLabel);
