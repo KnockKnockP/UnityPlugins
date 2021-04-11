@@ -22,6 +22,32 @@ namespace UnityPlugins {
             return newString;
         }
 
+        public static string TrimStart(this string target, string trimString) {
+            if (string.IsNullOrEmpty(trimString) == true) {
+                return target;
+            }
+
+            string result = target;
+            while (result.StartsWith(trimString) == true) {
+                result = result.Substring(trimString.Length);
+            }
+
+            return result;
+        }
+
+        public static string TrimEnd(this string target, string trimString) {
+            if (string.IsNullOrEmpty(trimString) == true) {
+                return target;
+            }
+
+            string result = target;
+            while (result.EndsWith(trimString) == true) {
+                result = result.Substring(0, (result.Length - trimString.Length));
+            }
+
+            return result;
+        }
+
         public static ColorBlock GenerateButtonColors(this ColorBlock originalColorBlock, Color32 newColor) {
             ColorBlock colorBlock = new ColorBlock {
                 normalColor = newColor,
