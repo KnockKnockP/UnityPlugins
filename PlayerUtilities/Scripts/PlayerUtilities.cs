@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace UnityPlugins {
@@ -88,6 +89,18 @@ namespace UnityPlugins {
                 foreach (string enumName in Enum.GetNames(enumType)) {
                     Debug.Log(enumName);
                 }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public static void PrintException(Exception exception, string message, Action<object> action) {
+                string printMessage = "";
+                if ((message != null) && (message != "")) {
+                    printMessage = $"{message}\r\n";
+                }
+                printMessage += ($"{exception.Message}\r\n" +
+                                 StackTraceUtility.ExtractStringFromException(exception));
+                action(printMessage);
+                return;
             }
         }
     }
