@@ -4,6 +4,13 @@ using UnityEngine.UI;
 
 namespace UnityPlugins {
     public static class Extensions {
+        public static readonly Vector2[] directions = new Vector2[4] {
+            Vector2.up,
+            Vector2.left,
+            Vector2.down,
+            Vector2.right
+        };
+
         public static bool IsSmallerThan<T>(this T value, T compare) where T : IComparable {
             return (value.CompareTo(compare) < 0);
         }
@@ -46,6 +53,22 @@ namespace UnityPlugins {
             }
 
             return result;
+        }
+
+        public static Vector2Int ToVector2Int(this Vector2 target) {
+            return new Vector2Int((int)(target.x), (int)(target.y));
+        }
+
+        public static Vector2 ToVector2(this Vector2Int target) {
+            return new Vector2(target.x, target.y);
+        }
+
+        public static Vector3Int ToVector3Int(this Vector3 target) {
+            return new Vector3Int((int)(target.x), (int)(target.y), (int)(target.z));
+        }
+
+        public static Vector3 ToVector3(this Vector3Int target) {
+            return new Vector3((int)(target.x), (int)(target.y), (int)(target.z));
         }
 
         public static ColorBlock GenerateButtonColors(this ColorBlock originalColorBlock, Color32 newColor) {
