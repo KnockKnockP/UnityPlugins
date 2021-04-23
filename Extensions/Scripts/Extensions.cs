@@ -67,6 +67,10 @@ namespace UnityPlugins {
             return new Vector3Int((int)(target.x), (int)(target.y), (int)(target.z));
         }
 
+        public static Vector2Int ToVector2Int(this Vector3 target) {
+            return new Vector2Int((int)(target.x), (int)(target.y));
+        }
+
         public static Vector3 ToVector3(this Vector3Int target) {
             return new Vector3((int)(target.x), (int)(target.y), (int)(target.z));
         }
