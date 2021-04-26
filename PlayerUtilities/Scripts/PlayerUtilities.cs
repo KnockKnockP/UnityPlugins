@@ -92,14 +92,14 @@ namespace UnityPlugins {
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static void PrintException(Exception exception, string message, Action<object> action) {
+            public static void PrintException(Exception exception, string message, Action<object> debugLogMethod) {
                 string printMessage = "";
                 if ((message != null) && (message != "")) {
                     printMessage = $"{message}\r\n";
                 }
                 printMessage += ($"{exception.Message}\r\n" +
                                  StackTraceUtility.ExtractStringFromException(exception));
-                action(printMessage);
+                debugLogMethod(printMessage);
                 return;
             }
         }
