@@ -72,10 +72,10 @@ namespace UnityPlugins {
         }
 
         public static Vector3 ToVector3(this Vector3Int target) {
-            return new Vector3((int)(target.x), (int)(target.y), (int)(target.z));
+            return new Vector3(target.x, target.y, target.z);
         }
 
-        public static ColorBlock GenerateButtonColors(this ColorBlock originalColorBlock, Color32 newColor) {
+        public static ColorBlock GenerateColorBlocks(this ColorBlock originalColorBlock, Color32 newColor) {
             ColorBlock colorBlock = new ColorBlock {
                 normalColor = newColor,
                 highlightedColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r + 10),
