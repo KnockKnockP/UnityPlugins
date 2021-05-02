@@ -56,12 +56,12 @@ namespace UnityPlugins {
 #endif
         }
 
-        public static void PrintEnums<T>() where T : Enum {
+        public static void PrintEnums<T>(GUIStyle guiStyle) where T : Enum {
 #if UNITY_EDITOR
             GUILayout.Label("\r\n" +
                               $"{typeof(T)}", EditorStyles.boldLabel);
             foreach (string enumName in Enum.GetNames(typeof(T))) {
-                GUILayout.Label(enumName, EditorStyles.miniLabel);
+                GUILayout.Label(enumName, guiStyle);
             }
 #endif
             return;
