@@ -114,5 +114,20 @@ namespace UnityPlugins {
             };
             return colorBlock;
         }
+
+        public static void UnityLog(this object message) {
+            Debug.Log(message);
+            return;
+        }
+
+        public static void UnityLogWarning(this object message) {
+            Debug.LogWarning(message);
+            return;
+        }
+
+        public static void UnityLogError(this object message) {
+            Debug.LogError(message);
+            return;
+        }
     }
 }
