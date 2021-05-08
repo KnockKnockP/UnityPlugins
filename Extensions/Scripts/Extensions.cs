@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -115,16 +116,19 @@ namespace UnityPlugins {
             return colorBlock;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void UnityLog(this object message) {
             Debug.Log(message);
             return;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void UnityLogWarning(this object message) {
             Debug.LogWarning(message);
             return;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void UnityLogError(this object message) {
             Debug.LogError(message);
             return;
