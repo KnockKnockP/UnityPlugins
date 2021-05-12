@@ -6,7 +6,7 @@ namespace UnityPlugins {
     public struct PlayerUtilities {
         public struct Math {
             //Returns true if the distance between is longer than the maxDistance.
-            public static bool IsDiagnal(Vector2 position1, Vector2 position2) {
+            public static bool IsDiagonal(Vector2 position1, Vector2 position2) {
                 return ((position1.x != position2.x) && (position1.y != position2.y));
             }
 
