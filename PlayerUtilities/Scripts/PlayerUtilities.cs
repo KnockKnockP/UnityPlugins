@@ -10,7 +10,9 @@ namespace UnityPlugins {
                 return ((position1.x != position2.x) && (position1.y != position2.y));
             }
 
-            public static T Clamp<T>(T value, T min, T max) where T : IComparable {
+            public static T Clamp<T>(T value,
+                T min,
+                T max) where T : IComparable {
                 if (value.IsSmallerThan(min) == true) {
                     value = min;
                 } else if (value.IsGreaterThan(max) == true) {
@@ -20,6 +22,7 @@ namespace UnityPlugins {
             }
 
             private static System.Random random = new System.Random(Guid.NewGuid().GetHashCode());
+
             public static T RandomEnum<T>(int? seed = null) where T : Enum {
                 if (seed != null) {
                     random = new System.Random((int)(seed));
@@ -28,7 +31,9 @@ namespace UnityPlugins {
                 return (T)(values.GetValue(random.Next(values.Length)));
             }
 
-            public static T RandomEnum<T>(int start, int end, int? seed = null) where T : Enum {
+            public static T RandomEnum<T>(int start,
+                int end,
+                int? seed = null) where T : Enum {
                 if (seed != null) {
                     random = new System.Random((int)(seed));
                 }
@@ -71,7 +76,9 @@ namespace UnityPlugins {
         }
 
         public struct Animation {
-            public static void ChangeAnimation(Animator animator, string animationName, int index) {
+            public static void ChangeAnimation(Animator animator,
+                string animationName,
+                int index) {
                 if (animator.GetCurrentAnimatorStateInfo(index).IsName(animationName) == false) {
                     animator.Play(animationName);
                 }
@@ -92,13 +99,14 @@ namespace UnityPlugins {
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            public static void PrintException(Exception exception, string message, Action<object> debugLogMethod) {
+            public static void PrintException(Exception exception,
+                string message,
+                Action<object> debugLogMethod) {
                 string printMessage = "";
                 if ((message != null) && (message != "")) {
                     printMessage = $"{message}\r\n";
                 }
-                printMessage += ($"{exception.Message}\r\n" +
-                                 StackTraceUtility.ExtractStringFromException(exception));
+                printMessage += ($"{exception.Message}\r\n" + StackTraceUtility.ExtractStringFromException(exception));
                 debugLogMethod(printMessage);
                 return;
             }

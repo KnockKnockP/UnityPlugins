@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -58,8 +58,7 @@ namespace UnityPlugins {
 
         public static void PrintEnums<T>(GUIStyle guiStyle) where T : Enum {
 #if UNITY_EDITOR
-            GUILayout.Label("\r\n" +
-                              $"{typeof(T)}", EditorStyles.boldLabel);
+            GUILayout.Label("\r\n" + $"{typeof(T)}", EditorStyles.boldLabel);
             foreach (string enumName in Enum.GetNames(typeof(T))) {
                 GUILayout.Label(enumName, guiStyle);
             }
