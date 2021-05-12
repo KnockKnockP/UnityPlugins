@@ -1,4 +1,7 @@
-namespace Tests {
-    public class EditModeTestScript {
+namespace UnityPlugins {
+    namespace Tests {
+        internal class EditModeTestScript {
+            //
+        }
     }
 }
