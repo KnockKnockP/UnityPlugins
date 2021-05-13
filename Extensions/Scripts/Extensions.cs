@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace UnityPlugins {
     public static class Extensions {
-        public static readonly Vector2[] directions = new Vector2[4] {
+        public static readonly Vector2[] Directions = new Vector2[4] {
             Vector2.up,
             Vector2.left,
             Vector2.down,
@@ -20,7 +20,7 @@ namespace UnityPlugins {
             return (value.CompareTo(compare) > 0);
         }
 
-        public static string RemoveBannedCharacters(this string original, string bannedCharacters) {
+        public static string RemoveCharacters(this string original, string bannedCharacters) {
             string newString = "";
             foreach (char _char in original) {
                 if (bannedCharacters.Contains(_char.ToString()) == false) {
