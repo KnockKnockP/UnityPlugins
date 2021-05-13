@@ -20,7 +20,7 @@ namespace UnityPlugins {
             return (value.CompareTo(compare) > 0);
         }
 
-        public static string RemoveBannedCharacters(this string original, string bannedCharacters) {
+        public static string RemoveCharacters(this string original, string bannedCharacters) {
             string newString = "";
             foreach (char _char in original) {
                 if (bannedCharacters.Contains(_char.ToString()) == false) {
