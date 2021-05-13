@@ -7,8 +7,8 @@ namespace UnityPlugins {
             [Test]
             public static void TestTwoDimensionalArray() {
                 IList<TwoDimensionalArray<int>> twoDimensionalArrayInt = new List<TwoDimensionalArray<int>>();
-                twoDimensionalArrayInt.Add(new TwoDimensionalArray<int>() {
-                    array = new int[5] {
+                twoDimensionalArrayInt.Add(new TwoDimensionalArray<int> {
+                    array = new int[] {
                         1,
                         2,
                         3,
@@ -16,8 +16,8 @@ namespace UnityPlugins {
                         5
                     }
                 });
-                twoDimensionalArrayInt.Add(new TwoDimensionalArray<int>() {
-                    array = new int[5] {
+                twoDimensionalArrayInt.Add(new TwoDimensionalArray<int> {
+                    array = new int[] {
                         6,
                         7,
                         8,

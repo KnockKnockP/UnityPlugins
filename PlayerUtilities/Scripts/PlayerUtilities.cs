@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -28,6 +29,7 @@ namespace UnityPlugins {
                 return (T)(values.GetValue(random.Next(values.Length)));
             }
 
+            //Start is inclusive, end is not.
             public static T RandomEnum<T>(int start, int end, int? seed = null) where T : Enum {
                 if (seed != null) {
                     random = new System.Random((int)(seed));
@@ -54,18 +56,18 @@ namespace UnityPlugins {
 
         public struct Input {
             public static int ParseInt(string input, int defaultReturn) {
-                return (((input != null) && (input != "")) ? int.Parse(input) : defaultReturn);
+                return ((string.IsNullOrEmpty(input) == false) ? int.Parse(input) : defaultReturn);
             }
 
             public static long ParseLong(string input, long defaultReturn) {
-                return (((input != null) && (input != "")) ? long.Parse(input) : defaultReturn);
+                return ((string.IsNullOrEmpty(input) == false) ? long.Parse(input) : defaultReturn);
             }
 
             public static Vector2 MouseToWorld(Vector2 mousePosition, Camera camera) {
                 return camera.ScreenToWorldPoint(mousePosition);
             }
 
-            public static RaycastHit2D[] MouseToHits(Camera camera) {
+            public static IEnumerable<RaycastHit2D> MouseToHits(Camera camera) {
                 return Physics2D.RaycastAll(MouseToWorld(UnityEngine.Input.mousePosition, camera), Vector2.zero);
             }
         }

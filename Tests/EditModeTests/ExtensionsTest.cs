@@ -6,30 +6,30 @@ namespace UnityPlugins {
         internal static class ExtensionsTest {
             [Test]
             public static void TestDirections() {
-                Assert.AreEqual(new Vector2(0f, 1f), Extensions.directions[0]);
-                Assert.AreEqual(new Vector2(-1f, 0f), Extensions.directions[1]);
-                Assert.AreEqual(new Vector2(0f, -1f), Extensions.directions[2]);
-                Assert.AreEqual(new Vector2(1f, 0f), Extensions.directions[3]);
+                Assert.AreEqual(new Vector2(0f, 1f), Extensions.Directions[0]);
+                Assert.AreEqual(new Vector2(-1f, 0f), Extensions.Directions[1]);
+                Assert.AreEqual(new Vector2(0f, -1f), Extensions.Directions[2]);
+                Assert.AreEqual(new Vector2(1f, 0f), Extensions.Directions[3]);
                 return;
             }
 
             [Test]
             public static void TestIsSmallerThan() {
                 //Value must be smaller than compare for this test to succeed.
-                Assert.AreEqual(true, 1.IsSmallerThan(42));
-                Assert.AreEqual(true, (-500).IsSmallerThan(500));
-                Assert.AreEqual(false, 5.IsSmallerThan(2));
-                Assert.AreEqual(false, 100.IsSmallerThan(20));
+                Assert.IsTrue(1.IsSmallerThan(42));
+                Assert.IsTrue((-500).IsSmallerThan(500));
+                Assert.IsFalse(5.IsSmallerThan(2));
+                Assert.IsFalse(100.IsSmallerThan(20));
                 return;
             }
 
             [Test]
             public static void TestIsBiggerThan() {
                 //Value must be bigger than compare for this test to succeed.
-                Assert.AreEqual(true, 5.IsGreaterThan(2));
-                Assert.AreEqual(true, 100.IsGreaterThan(20));
-                Assert.AreEqual(false, 1.IsGreaterThan(42));
-                Assert.AreEqual(false, (-500).IsGreaterThan(500));
+                Assert.IsTrue(5.IsGreaterThan(2));
+                Assert.IsTrue(100.IsGreaterThan(20));
+                Assert.IsFalse(1.IsGreaterThan(42));
+                Assert.IsFalse((-500).IsGreaterThan(500));
                 return;
             }
 

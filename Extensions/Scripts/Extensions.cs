@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace UnityPlugins {
     public static class Extensions {
-        public static readonly Vector2[] directions = new Vector2[4] {
+        public static readonly Vector2[] Directions = new Vector2[4] {
             Vector2.up,
             Vector2.left,
             Vector2.down,
