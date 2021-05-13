@@ -20,7 +20,7 @@ namespace UnityPlugins {
                     return;
                 }
             }
-            
+
             [Test]
             public static void TestFindAllClassesImplementing() {
                 Type[] classTypes = Reflection.FindAllClassesImplementing<TestInterface>().ToArray();
