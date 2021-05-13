@@ -65,7 +65,9 @@ namespace UnityPlugins {
         }
 
         public static Vector3Int ToVector3Int(this Vector3 target) {
-            return new Vector3Int((int)(target.x), (int)(target.y), (int)(target.z));
+            return new Vector3Int((int)(target.x),
+                                  (int)(target.y),
+                                  (int)(target.z));
         }
 
         public static Vector2Int ToVector2Int(this Vector3 target) {
@@ -73,25 +75,45 @@ namespace UnityPlugins {
         }
 
         public static Vector3 ToVector3(this Vector3Int target) {
-            return new Vector3(target.x, target.y, target.z);
+            return new Vector3(target.x,
+                               target.y,
+                               target.z);
         }
 
         public static ColorBlock GenerateColorBlocks(this ColorBlock originalColorBlock, Color32 newColor) {
             ColorBlock colorBlock = new ColorBlock {
                 normalColor = newColor,
-                highlightedColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r + 10), byte.MinValue, byte.MaxValue)),
-                    (byte)(PlayerUtilities.Math.Clamp((newColor.g + 20), byte.MinValue, byte.MaxValue)),
-                    (byte)(PlayerUtilities.Math.Clamp((newColor.b + 10), byte.MinValue, byte.MaxValue)),
-                    byte.MaxValue),
-                pressedColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r - 30), byte.MinValue, byte.MaxValue)),
-                    (byte)(PlayerUtilities.Math.Clamp((newColor.g - 30), byte.MinValue, byte.MaxValue)),
-                    (byte)(PlayerUtilities.Math.Clamp((newColor.b - 30), byte.MinValue, byte.MaxValue)),
-                    byte.MaxValue),
+                highlightedColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r + 10),
+                                                                                 byte.MinValue,
+                                                                                 byte.MaxValue)),
+                                               (byte)(PlayerUtilities.Math.Clamp((newColor.g + 20),
+                                                                                 byte.MinValue,
+                                                                                 byte.MaxValue)),
+                                               (byte)(PlayerUtilities.Math.Clamp((newColor.b + 10),
+                                                                                 byte.MinValue,
+                                                                                 byte.MaxValue)),
+                                               byte.MaxValue),
+                pressedColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r - 30),
+                                                                             byte.MinValue,
+                                                                             byte.MaxValue)),
+                                           (byte)(PlayerUtilities.Math.Clamp((newColor.g - 30),
+                                                                             byte.MinValue,
+                                                                             byte.MaxValue)),
+                                           (byte)(PlayerUtilities.Math.Clamp((newColor.b - 30),
+                                                                             byte.MinValue,
+                                                                             byte.MaxValue)),
+                                           byte.MaxValue),
                 selectedColor = newColor,
-                disabledColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r * 0.6f), byte.MinValue, byte.MaxValue)),
-                    (byte)(PlayerUtilities.Math.Clamp((newColor.g * 0.6f), byte.MinValue, byte.MaxValue)),
-                    (byte)(PlayerUtilities.Math.Clamp((newColor.b * 0.6f), byte.MinValue, byte.MaxValue)),
-                    byte.MaxValue),
+                disabledColor = new Color32((byte)(PlayerUtilities.Math.Clamp((newColor.r * 0.6f),
+                                                                              byte.MinValue,
+                                                                              byte.MaxValue)),
+                                            (byte)(PlayerUtilities.Math.Clamp((newColor.g * 0.6f),
+                                                                              byte.MinValue,
+                                                                              byte.MaxValue)),
+                                            (byte)(PlayerUtilities.Math.Clamp((newColor.b * 0.6f),
+                                                                              byte.MinValue,
+                                                                              byte.MaxValue)),
+                                            byte.MaxValue),
                 colorMultiplier = originalColorBlock.colorMultiplier,
                 fadeDuration = originalColorBlock.fadeDuration
             };
