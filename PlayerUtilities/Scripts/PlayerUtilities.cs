@@ -105,7 +105,7 @@ namespace UnityPlugins {
                                               string message,
                                               Action<object> debugLogMethod) {
                 string printMessage = "";
-                if ((message != null) && (message != "")) {
+                if (string.IsNullOrEmpty(message) == false) {
                     printMessage = $"{message}\r\n";
                 }
                 printMessage += ($"{exception.Message}\r\n" + StackTraceUtility.ExtractStringFromException(exception));
