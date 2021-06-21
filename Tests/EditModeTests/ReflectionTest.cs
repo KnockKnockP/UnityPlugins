@@ -6,6 +6,26 @@ namespace UnityPlugins {
     namespace Tests {
         namespace EditMode {
             public static class ReflectionTest {
+                #region GetEnums.
+                private enum TestEnum {
+                    A = 0,
+                    B = 1,
+                    C = 2
+                }
+                
+                [Test]
+                public static void TestGetEnums() {
+                    TestEnum[] enumValues = Reflection.GetEnumValues<TestEnum>();
+                    Assert.AreEqual(3, enumValues.Length);
+                    Assert.IsTrue(enumValues.Contains(TestEnum.A));
+                    Assert.IsTrue(enumValues.Contains(TestEnum.B));
+                    Assert.IsTrue(enumValues.Contains(TestEnum.C));
+                    return;
+                }
+                #endregion
+                
+                #region FindAllClassesImplementing
+                #region Test classes.
                 private interface ITestInterface {
                     internal void TestInterfaceMethod();
                 }
@@ -21,6 +41,7 @@ namespace UnityPlugins {
                         return;
                     }
                 }
+                #endregion
 
                 [Test]
                 public static void TestFindAllClassesImplementing() {
@@ -30,6 +51,7 @@ namespace UnityPlugins {
                     Assert.IsTrue(classTypes.Contains(typeof(TestClass2)));
                     return;
                 }
+                #endregion
             }
         }
     }
