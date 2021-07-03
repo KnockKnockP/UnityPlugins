@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using UnityPlugins;
 
 namespace UnityPlugins.Tests.EditMode {
     internal static class InputToolTest {

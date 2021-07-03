@@ -12,7 +12,7 @@ namespace UnityPlugins.Tests.EditMode {
             Assert.AreEqual(new Vector2(1f, 0f), Vector2Extension.Directions[3]);
             return;
         }
-        
+
         [Test]
         public static void TestToVector2Int() {
             Assert.AreEqual(new Vector2Int(1, 5), new Vector2(1f, 5f).ToVector2Int());

@@ -9,7 +9,7 @@ namespace UnityPlugins.Tests.EditMode {
             Assert.AreEqual("est string", "Test string".RemoveCharacters('T'));
             Assert.AreEqual("es sring", "Test string".RemoveCharacters('T', 't'));
             Assert.AreEqual("\n가다", "\r\n가나다".RemoveCharacters('\r', '나'));
-            
+
             Assert.AreEqual("Tes sring", "Test string".RemoveCharacters("t"));
             Assert.AreEqual("est string", "Test string".RemoveCharacters("T"));
             Assert.AreEqual("es sring", "Test string".RemoveCharacters("Tt"));
