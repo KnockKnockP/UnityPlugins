@@ -4,17 +4,17 @@ using UnityEngine;
 
 namespace UnityPlugins {
     /// <summary>
-    /// A class that contains Unity logging tools.
+    ///     A class that contains Unity logging tools.
     /// </summary>
     public static class LogTool {
         /// <summary>
-        /// Logs all <typeparamref name="T"/> enum values.
+        ///     Logs all <typeparamref name="T" /> enum values.
         /// </summary>
         /// <typeparam name="T">An enum type.</typeparam>
         public static void LogEnums<T>() => LogEnums(typeof(T));
 
         /// <summary>
-        /// Logs all <paramref name="enumType"/> enum values.
+        ///     Logs all <paramref name="enumType" /> enum values.
         /// </summary>
         /// <param name="enumType">An enum type.</param>
         public static void LogEnums(Type enumType) {
@@ -25,17 +25,17 @@ namespace UnityPlugins {
         }
 
         /// <summary>
-        /// Logs an exception alongside <paramref name="message"/>.
+        ///     Logs an exception alongside <paramref name="message" />.
         /// </summary>
-        /// <param name="exception">An <see cref="Exception"/> to log.</param>
+        /// <param name="exception">An <see cref="Exception" /> to log.</param>
         /// <param name="message">An extra message.</param>
         /// <param name="debugLogMethod">
-        /// A method used for logging a message.
-        /// <example>
-        /// <see cref="Debug.Log(object)"/> <br />
-        /// <see cref="Debug.LogWarning(object)"/> <br />
-        /// <see cref="Debug.LogError(object)"/> <br />
-        /// </example>
+        ///     A method used for logging a message.
+        ///     <example>
+        ///         <see cref="Debug.Log(object)" /> <br />
+        ///         <see cref="Debug.LogWarning(object)" /> <br />
+        ///         <see cref="Debug.LogError(object)" /> <br />
+        ///     </example>
         /// </param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void PrintException(Exception exception,

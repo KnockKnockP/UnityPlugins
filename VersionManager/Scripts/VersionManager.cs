@@ -3,7 +3,8 @@ using UnityEngine.Serialization;
 
 namespace UnityPlugins {
     public class VersionManager : MonoBehaviour {
-        [FormerlySerializedAs("MainBuildDisableObjects"),SerializeField] private GameObject[] mainBuildDisableObjects = null;
+        [FormerlySerializedAs("MainBuildDisableObjects"), SerializeField]
+        private GameObject[] mainBuildDisableObjects = null;
 
         public void Awake() => DisableObjects();
 
