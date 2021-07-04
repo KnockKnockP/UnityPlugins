@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EnumLinker {
+namespace UnityPlugins.EnumTool {
     public static class EnumLinker {
         internal static readonly IList<Action> updateLinkMethods = new List<Action>();
 

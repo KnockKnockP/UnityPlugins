@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEngine;
 
-namespace EnumLinker {
+namespace UnityPlugins.EnumTool {
     /// <summary>
     /// This static class will find and link all the enum values to a class that implements <typeparamref name="TInterface"/>.
     /// </summary>

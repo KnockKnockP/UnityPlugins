@@ -1,11 +1,13 @@
 ﻿using System;
+using UnityEngine.Scripting;
 
-namespace EnumLinker {
+namespace UnityPlugins.EnumTool {
     /// <summary>
     /// This attribute is needed for linking an enum value to a class.<br />
-    /// This can only be used to classes.
+    /// This can only be used to classes. <br />
+    /// When this in Unity, add <see cref="PreserveAttribute"/> to your class to prevent stripping.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = true), Preserve]
     public class EnumLinkerAttribute : Attribute {
         internal Type EnumType {
             get;
